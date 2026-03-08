@@ -1,5 +1,25 @@
-//! Furui (篩) — fuzzy matching, scoring, and result ranking engine for Neovim plugins
+//! Furui (篩) — fuzzy matching, scoring, and result ranking engine.
 //!
-//! Shared library for the blnvim-ng plugin suite.
-//! Built with [`nvim-oxi`](https://github.com/noib3/nvim-oxi) for zero-cost
-//! Neovim API bindings.
+//! A zero-dependency fuzzy matching library inspired by fzf's scoring
+//! algorithm. Designed for use in Neovim plugins but usable anywhere.
+//!
+//! # Quick Start
+//!
+//! ```
+//! use furui::{FuzzyMatcher, MatchResult};
+//!
+//! let matcher = FuzzyMatcher::new();
+//! let result = matcher.score("src/main.rs", "smr");
+//! assert!(result.is_some());
+//!
+//! // Rank a list of candidates
+//! let candidates = vec!["src/main.rs", "src/lib.rs", "README.md"];
+//! let ranked = matcher.rank("sr", &candidates);
+//! assert_eq!(ranked[0].candidate, "src/lib.rs");
+//! ```
+
+mod matcher;
+mod score;
+
+pub use matcher::{FuzzyMatcher, MatchResult, RankedResult};
+pub use score::Score;
