@@ -1,0 +1,45 @@
+{
+  "version": 2,
+  "workspace": {
+    "root": "/Users/drzzln/code/github/pleme-io/furui",
+    "members": [
+      {
+        "name": "furui",
+        "relative_path": "."
+      }
+    ]
+  },
+  "crates": {
+    "furui-0.1.0": {
+      "name": "furui",
+      "version": "0.1.0",
+      "edition": "2024",
+      "source": {
+        "kind": "path",
+        "relative_path": "."
+      },
+      "features": [],
+      "proc_macro": false,
+      "build_script": null,
+      "binaries": [],
+      "lib_target": {
+        "name": "furui",
+        "path": "src/lib.rs"
+      },
+      "dependencies": [],
+      "runtime_dependencies": [],
+      "build_dependencies": [],
+      "crate_renames": {}
+    }
+  },
+  "root_crate": "furui-0.1.0",
+  "workspace_members": [
+    "furui-0.1.0"
+  ],
+  "flake_metadata": {
+    "furui": {
+      "default_bin": null,
+      "repo": "pleme-io/furui"
+    }
+  }
+}
